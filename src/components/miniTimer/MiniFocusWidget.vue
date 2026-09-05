@@ -12,47 +12,59 @@
     @mousedown="handleDragStart"
   >
     <!-- ============================================== -->
-    <!-- COMPACT MODE PILL (190px x 58px)               -->
+    <!-- ============================================== -->
+    <!-- COMPACT MODE PILL (220px x 48px)               -->
     <!-- ============================================== -->
     <div v-if="displayStyle === 'compact'" class="compact-layout">
       <button
         class="compact-tree-btn no-drag"
-        title="Expand focus widget"
-        @click="toggleStyle('focus')"
+        title="Make bigger (Expand focus widget)"
+        @click.stop="toggleStyle('focus')"
       >
         <TreeIllustration
           v-if="mode === 'focus'"
           :species="treeSpecies"
           :stage="treeStage"
-          :size="28"
+          :size="26"
         />
-        <Coffee v-else :size="18" class="break-icon" />
+        <Coffee v-else :size="17" class="break-icon" />
       </button>
 
       <span class="compact-time tabular-nums">{{ formattedTime }}</span>
 
       <div class="compact-actions no-drag">
+        <!-- Play / Pause -->
         <button
           class="icon-action-btn"
           :title="status === 'running' ? 'Pause' : 'Resume'"
           @click.stop="$emit('toggle-run')"
         >
-          <Pause v-if="status === 'running'" :size="14" />
-          <Play v-else :size="14" />
+          <Pause v-if="status === 'running'" :size="13" />
+          <Play v-else :size="13" />
         </button>
 
+        <!-- Make this bigger (Expand to focus mode) -->
         <button
           class="icon-action-btn"
-          title="Open Settings"
-          @click.stop="$emit('open-settings')"
+          title="Make bigger (Expand focus widget)"
+          @click.stop="toggleStyle('focus')"
         >
-          <Settings :size="14" />
+          <Maximize2 :size="13" />
+        </button>
+
+        <!-- Go back to desktop view -->
+        <button
+          class="icon-action-btn"
+          title="Return to desktop view"
+          @click.stop="$emit('open-main')"
+        >
+          <AppWindow :size="13" />
         </button>
       </div>
     </div>
 
     <!-- ============================================== -->
-    <!-- EXPANDED FOCUS WIDGET (240px x 210px)          -->
+    <!-- EXPANDED FOCUS WIDGET (194px x 168px)          -->
     <!-- ============================================== -->
     <div v-else class="focus-layout">
       <!-- Top Navigation & Settings Bar -->
@@ -69,6 +81,15 @@
             @click.stop="toggleStyle('compact')"
           >
             <Minimize2 :size="12" />
+          </button>
+
+          <!-- Go back to desktop view -->
+          <button
+            class="header-tool-btn"
+            title="Return to desktop view"
+            @click.stop="$emit('open-main')"
+          >
+            <AppWindow :size="13" />
           </button>
 
           <!-- Open Settings in Main App -->
@@ -185,6 +206,8 @@ import {
   RotateCcw,
   SkipForward,
   Minimize2,
+  Maximize2,
+  AppWindow,
   Coffee,
   Sparkles,
 } from 'lucide-vue-next';
@@ -234,10 +257,10 @@ const modeLabel = computed(() => {
   return 'Long Break';
 });
 
-const toggleStyle = (newStyle: 'focus' | 'compact') => {
+const toggleStyle = async (newStyle: 'focus' | 'compact') => {
   displayStyle.value = newStyle;
   emit('style-change', newStyle);
-  desktopService.setMiniWindowSize(newStyle);
+  await desktopService.setMiniWindowSize(newStyle);
 };
 
 const handleDragStart = (e: MouseEvent) => {
@@ -483,12 +506,12 @@ const handleDragStart = (e: MouseEvent) => {
 }
 
 /* ============================================== */
-/* COMPACT LAYOUT (190px x 58px)                  */
+/* COMPACT LAYOUT                                 */
 /* ============================================== */
 .compact-layout {
-  width: 190px;
-  height: 54px;
-  padding: 6px 10px;
+  width: 220px;
+  height: 48px;
+  padding: 4px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -502,7 +525,8 @@ const handleDragStart = (e: MouseEvent) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 2px;
+  border-radius: 6px;
   transition: transform 0.15s ease;
 }
 
@@ -515,6 +539,7 @@ const handleDragStart = (e: MouseEvent) => {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-primary, #111827);
+  letter-spacing: -0.02em;
 }
 
 :global(.dark) .compact-time {
@@ -524,7 +549,7 @@ const handleDragStart = (e: MouseEvent) => {
 .compact-actions {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .icon-action-btn {
@@ -540,9 +565,18 @@ const handleDragStart = (e: MouseEvent) => {
   transition: all 0.15s ease;
 }
 
+:global(.dark) .icon-action-btn {
+  color: #9CA3AF;
+}
+
 .icon-action-btn:hover {
   color: var(--text-primary, #111827);
   background: var(--bg-surface-hover, rgba(0, 0, 0, 0.06));
+}
+
+:global(.dark) .icon-action-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* Fade Transitions */

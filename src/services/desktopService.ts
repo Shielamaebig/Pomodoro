@@ -153,12 +153,12 @@ export class DesktopService {
       const miniWin = await Window.getByLabel('mini');
       if (!miniWin) return;
 
-      // Sizing for floating widget: Focus (~232x212) vs Compact (~196x72) to accommodate rounded shadow
+      // Sizing for floating widget: Focus (~232x212) vs Compact (~252x80) to accommodate rounded shadow
       let width = 232;
       let height = 212;
       if (size === 'compact') {
-        width = 196;
-        height = 72;
+        width = 252;
+        height = 80;
       }
       await miniWin.setSize(new LogicalSize(width, height));
     } catch (e) {

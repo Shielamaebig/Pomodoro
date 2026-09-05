@@ -53,7 +53,7 @@ export class NotificationService {
 
     if (typeof window !== 'undefined' && 'Notification' in window && Notification.permission === 'granted') {
       try {
-        new Notification(title, { body, icon: '/tomato.svg' });
+        new Notification(title, { body, icon: '/tree.svg' });
       } catch (e) {
         console.warn('Failed to send Web Notification:', e);
       }

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Trunk Wood Gradients -->
+    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4E342E" />
+      <stop offset="35%" stop-color="#795548" />
+      <stop offset="70%" stop-color="#8D6E63" />
+      <stop offset="100%" stop-color="#3E2723" />
+    </linearGradient>
+
+    <linearGradient id="branchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6D4C41" />
+      <stop offset="100%" stop-color="#4E342E" />
+    </linearGradient>
+
+    <!-- Foliage Gradients (Multiple Tones for 3D Depth) -->
+    <radialGradient id="canopyDeep" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1B5E20" />
+      <stop offset="75%" stop-color="#14532D" />
+      <stop offset="100%" stop-color="#052E16" />
+    </radialGradient>
+
+    <radialGradient id="canopyMid" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="30%" stop-color="#10B981" />
+      <stop offset="75%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </radialGradient>
+
+    <radialGradient id="canopyHighlight" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#A7F3D0" />
+      <stop offset="25%" stop-color="#6EE7B7" />
+      <stop offset="60%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </radialGradient>
+
+    <!-- Soil Gradient -->
+    <linearGradient id="soilGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8D6E63" />
+      <stop offset="50%" stop-color="#6D4C41" />
+      <stop offset="100%" stop-color="#3E2723" />
+    </linearGradient>
+
+    <!-- Soft Base Shadow -->
+    <filter id="dockShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-opacity="0.32" flood-color="#091E12" />
+    </filter>
+
+    <!-- Layer Depth Shadow -->
+    <filter id="layerShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.22" flood-color="#022c14" />
+    </filter>
+  </defs>
+
+  <g filter="url(#dockShadow)">
+    <!-- Soil Base Mound -->
+    <ellipse cx="256" cy="452" rx="150" ry="32" fill="url(#soilGrad)" />
+    <ellipse cx="256" cy="448" rx="125" ry="24" fill="#5D4037" />
+    <!-- Grass tufts on soil -->
+    <path d="M 230 442 C 228 432 235 428 238 440 Z" fill="#10B981" />
+    <path d="M 236 443 C 238 430 248 432 245 442 Z" fill="#34D399" />
+    <path d="M 270 442 C 274 430 282 432 278 443 Z" fill="#10B981" />
+    <path d="M 278 444 C 283 434 290 436 286 445 Z" fill="#34D399" />
+
+    <!-- Trunk Base Roots -->
+    <path d="M 220 446 C 228 410 236 340 230 270 C 246 280 266 280 282 270 C 276 340 284 410 292 446 C 272 452 240 452 220 446 Z" fill="url(#trunkGrad)" />
+    <path d="M 226 444 C 210 448 194 449 184 452 C 196 444 212 436 226 430 Z" fill="#4E342E" />
+    <path d="M 286 444 C 302 448 318 449 328 452 C 316 444 300 436 286 430 Z" fill="#3E2723" />
+
+    <!-- Branch Splays -->
+    <path d="M 234 320 C 212 284 176 264 154 268 C 172 282 208 306 230 336 Z" fill="url(#branchGrad)" />
+    <path d="M 278 320 C 300 284 336 264 358 268 C 340 282 304 306 282 336 Z" fill="url(#branchGrad)" />
+    <path d="M 252 280 C 248 240 240 216 232 200 C 244 212 254 236 258 274 Z" fill="#5D4037" />
+    <path d="M 260 280 C 264 240 272 216 280 200 C 268 212 258 236 254 274 Z" fill="#4E342E" />
+
+    <!-- Deep Background Foliage (Shadow Depth) -->
+    <g filter="url(#layerShadow)">
+      <circle cx="170" cy="235" r="92" fill="url(#canopyDeep)" />
+      <circle cx="342" cy="235" r="92" fill="url(#canopyDeep)" />
+      <circle cx="256" cy="145" r="105" fill="url(#canopyDeep)" />
+    </g>
+
+    <!-- Midground Foliage Clouds -->
+    <g filter="url(#layerShadow)">
+      <circle cx="150" cy="255" r="82" fill="url(#canopyMid)" />
+      <circle cx="362" cy="255" r="82" fill="url(#canopyMid)" />
+      <circle cx="210" cy="165" r="92" fill="url(#canopyMid)" />
+      <circle cx="302" cy="165" r="92" fill="url(#canopyMid)" />
+      <circle cx="256" cy="245" r="96" fill="url(#canopyMid)" />
+    </g>
+
+    <!-- Foreground Vibrant Foliage with Sunlight Highlights -->
+    <circle cx="195" cy="245" r="80" fill="url(#canopyHighlight)" />
+    <circle cx="317" cy="245" r="80" fill="url(#canopyHighlight)" />
+    <circle cx="256" cy="180" r="88" fill="url(#canopyHighlight)" />
+    <circle cx="256" cy="265" r="72" fill="url(#canopyHighlight)" />
+
+    <!-- Delicate Canopy Glow / Highlight Domes -->
+    <ellipse cx="235" cy="135" rx="55" ry="32" transform="rotate(-15 235 135)" fill="#ECFDF5" opacity="0.4" />
+    <ellipse cx="165" cy="215" rx="42" ry="24" transform="rotate(-20 165 215)" fill="#ECFDF5" opacity="0.35" />
+    <ellipse cx="335" cy="205" rx="42" ry="24" transform="rotate(15 335 205)" fill="#ECFDF5" opacity="0.32" />
+    <ellipse cx="245" cy="225" rx="40" ry="22" transform="rotate(-10 245 225)" fill="#ECFDF5" opacity="0.25" />
+  </g>
+</svg>

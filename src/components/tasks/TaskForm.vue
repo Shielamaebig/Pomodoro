@@ -11,7 +11,7 @@
       />
 
       <div class="estimate-wrapper" title="Estimated Pomodoros">
-        <span class="estimate-icon">🍅</span>
+        <span class="estimate-icon">🌳</span>
         <input
           v-model.number="estimate"
           type="number"

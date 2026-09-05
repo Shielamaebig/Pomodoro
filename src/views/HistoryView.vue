@@ -22,7 +22,7 @@
         <div class="group-header">
           <span class="group-date">{{ group.displayDate }}</span>
           <span class="group-meta">
-            🍅 {{ group.completedPomodoros }} sessions &bull;
+            🌳 {{ group.completedPomodoros }} sessions &bull;
             {{ Math.round(group.totalFocusSeconds / 60) }}m focused
           </span>
         </div>
@@ -43,7 +43,7 @@
             <div class="timeline-content">
               <div class="session-main">
                 <span class="session-icon">
-                  {{ session.sessionType === 'focus' ? '🍅' : '☕' }}
+                  {{ session.sessionType === 'focus' ? '🌳' : '☕' }}
                 </span>
                 <span class="session-title">
                   {{ session.taskTitle || (session.sessionType === 'focus' ? 'Focus Session' : 'Rest Break') }}

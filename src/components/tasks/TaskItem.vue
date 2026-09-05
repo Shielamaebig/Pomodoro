@@ -24,7 +24,7 @@
 
       <div class="task-meta">
         <span class="pomodoro-badge">
-          🍅 {{ task.completedPomodoros }}/{{ task.estimatedPomodoros }}
+          🌳 {{ task.completedPomodoros }}/{{ task.estimatedPomodoros }}
         </span>
         <span v-if="isActive" class="active-badge">Active Task</span>
       </div>

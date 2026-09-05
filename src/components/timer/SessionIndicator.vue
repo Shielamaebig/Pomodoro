@@ -9,7 +9,7 @@
         current: index === completedInCycle + 1 && isFocusRunning,
       }"
     >
-      <span v-if="index <= completedInCycle" class="tomato-icon">🍅</span>
+      <span v-if="index <= completedInCycle" class="tree-icon">🌳</span>
       <span v-else class="empty-dot"></span>
     </div>
   </div>
@@ -53,6 +53,7 @@ const completedInCycle = computed(() => {
   transition: all var(--transition-normal);
 }
 
+.tree-icon,
 .tomato-icon {
   font-size: 1.15rem;
   line-height: 1;

@@ -5,7 +5,7 @@ use tauri::{
 };
 
 pub fn create_tray<R: Runtime>(app: &tauri::AppHandle<R>) -> Result<(), Box<dyn std::error::Error>> {
-    let title_item = MenuItem::with_id(app, "status", "🍅 Pomodoro — 25:00", false, None::<&str>)?;
+    let title_item = MenuItem::with_id(app, "status", "🌳 Pomodoro — 25:00", false, None::<&str>)?;
     let open_item = MenuItem::with_id(app, "open", "Open Pomodoro", true, None::<&str>)?;
     let toggle_timer = MenuItem::with_id(app, "toggle-timer", "Pause / Resume", true, None::<&str>)?;
     let skip_item = MenuItem::with_id(app, "skip", "Skip Session", true, None::<&str>)?;

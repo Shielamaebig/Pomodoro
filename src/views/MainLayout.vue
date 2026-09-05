@@ -4,7 +4,7 @@
     <aside class="sidebar">
       <!-- App Brand & Drag Handle -->
       <div class="brand titlebar-drag-region">
-        <div class="brand-logo no-drag">🍅</div>
+        <div class="brand-logo no-drag">🌳</div>
         <span class="brand-name no-drag">Pomodoro</span>
       </div>
 

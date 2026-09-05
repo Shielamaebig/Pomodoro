@@ -286,7 +286,7 @@ export const useTimerStore = defineStore('timer', () => {
           (completedPomodoros.value + 1) % settingsStore.settings.longBreakInterval === 0
             ? 'long break'
             : 'short break';
-        notificationService.notify('🍅 Focus Complete', `Great work. Time for a ${nextBreakType}.`);
+        notificationService.notify('🌳 Focus Complete', `Great work. Time for a ${nextBreakType}.`);
       } else {
         notificationService.notify('☕ Break Complete', 'Ready for another focus session?');
       }
@@ -339,6 +339,8 @@ export const useTimerStore = defineStore('timer', () => {
         break;
       case 'open-main':
         desktopService.showMainWindow();
+        desktopService.hideMiniTimer();
+        router.push('/');
         break;
     }
   };

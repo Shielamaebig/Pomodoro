@@ -97,8 +97,10 @@ const handleOpenSettings = () => {
   desktopService.emitTimerAction({ action: 'open-settings' });
 };
 
-const handleOpenMain = () => {
+const handleOpenMain = async () => {
   desktopService.emitTimerAction({ action: 'open-main' });
+  await desktopService.showMainWindow();
+  await desktopService.hideMiniTimer();
 };
 
 const handleStyleChange = (style: 'focus' | 'compact') => {

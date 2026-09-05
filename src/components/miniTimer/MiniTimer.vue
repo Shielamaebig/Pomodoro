@@ -44,7 +44,7 @@
         <div class="header-left">
           <span class="mode-icon">{{ modeEmoji }}</span>
           <span class="time tabular-nums">{{ formattedTime }}</span>
-          <span class="session-badge">🍅 {{ completedPomodoros }}</span>
+          <span class="session-badge">🌳 {{ completedPomodoros }}</span>
         </div>
         <MiniTimerControls
           :status="status"
@@ -95,7 +95,7 @@ defineEmits<{
   (e: 'hide'): void;
 }>();
 
-const modeEmoji = computed(() => (props.mode === 'focus' ? '🍅' : '☕'));
+const modeEmoji = computed(() => (props.mode === 'focus' ? '🌳' : '☕'));
 
 const modeLabel = computed(() => {
   if (props.mode === 'focus') return 'Focus';

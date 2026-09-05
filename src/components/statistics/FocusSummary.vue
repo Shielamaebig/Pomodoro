@@ -18,7 +18,7 @@
     <div class="stat-card">
       <div class="stat-header">
         <span class="stat-label">Total Pomodoros</span>
-        <span class="stat-icon">🍅</span>
+        <span class="stat-icon">🌳</span>
       </div>
       <div class="stat-value tabular-nums">
         {{ todayPomodoros }}

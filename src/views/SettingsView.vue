@@ -386,7 +386,7 @@ const setTheme = (theme: 'system' | 'light' | 'dark') => {
 
 const testNotification = async () => {
   await notificationService.requestPermission();
-  notificationService.notify('🍅 Focus Complete', 'Great work. Time for a short break.');
+  notificationService.notify('🌳 Focus Complete', 'Great work. Time for a short break.');
 };
 
 const testSound = () => {
