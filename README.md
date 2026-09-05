@@ -88,8 +88,3 @@ The compiled installer will be available in:
 - macOS: `src-tauri/target/release/bundle/dmg/`
 - Windows: `src-tauri/target/release/bundle/msi/`
 
----
-
-## 📄 License
-
-MIT License &copy; 2026 Shiela Malaque
