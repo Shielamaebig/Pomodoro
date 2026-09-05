@@ -11,6 +11,7 @@ Download the latest version for your platform:
 | Platform | Installer | Architecture |
 | :--- | :--- | :--- |
 | **macOS** (Apple Silicon) | [**Download .DMG (v1.0.0)**](https://github.com/Shielamaebig/Pomodoro/releases/download/v1.0.0/Pomodoro_1.0.0_aarch64.dmg) | `aarch64` (M1 / M2 / M3 / M4) |
+| **Windows** | [**Download .MSI (v1.0.0)**](https://github.com/Shielamaebig/Pomodoro/releases/download/v1.0.0/Pomodoro_1.0.0_x64_en-US.msi) · [**Download .EXE (v1.0.0)**](https://github.com/Shielamaebig/Pomodoro/releases/download/v1.0.0/Pomodoro_1.0.0_x64-setup.exe) | `x64` |
 | **All Releases** | [**View GitHub Releases**](https://github.com/Shielamaebig/Pomodoro/releases/latest) | macOS / Windows |
 
 ### macOS Installation:
