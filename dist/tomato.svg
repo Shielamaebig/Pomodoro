@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="tomatoGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FF6B52" />
+      <stop offset="70%" stop-color="#E24429" />
+      <stop offset="100%" stop-color="#B82E17" />
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Main Tomato Body -->
+  <path d="M 50 24 C 28 24 14 42 14 62 C 14 80 30 92 50 92 C 70 92 86 80 86 62 C 86 42 72 24 50 24 Z" fill="url(#tomatoGrad)" filter="url(#shadow)" />
+  <!-- Gloss highlight -->
+  <ellipse cx="38" cy="42" rx="14" ry="9" transform="rotate(-25 38 42)" fill="#ffffff" opacity="0.22" />
+  <!-- Stem & Leaves -->
+  <path d="M 50 14 C 49 18 47 25 50 27 C 53 25 51 18 50 14 Z" fill="#2E7D32" />
+  <path d="M 50 27 C 42 22 34 26 29 27 C 36 29 44 28 50 27 Z" fill="#43A047" />
+  <path d="M 50 27 C 58 22 66 26 71 27 C 64 29 56 28 50 27 Z" fill="#43A047" />
+  <path d="M 50 27 C 47 34 38 38 33 39 C 39 37 46 34 50 27 Z" fill="#388E3C" />
+  <path d="M 50 27 C 53 34 62 38 67 39 C 61 37 54 34 50 27 Z" fill="#388E3C" />
+</svg>
